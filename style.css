@@ -1,0 +1,342 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    background:
+        radial-gradient(ellipse at 20% 20%, #39247c 0%, transparent 45%),
+        radial-gradient(ellipse at 80% 80%, #123c76 0%, transparent 45%),
+        #080d23;
+    overflow-x: hidden;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .25;
+    pointer-events: none;
+    animation: float 9s infinite alternate ease-in-out;
+}
+
+body::before {
+    background: #a34dff;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    background: #00d9ff;
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    to { transform: translate(70px, 90px) scale(1.3); }
+}
+
+.app {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 480px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 31px;
+    font-weight: 800;
+    color: #ffe36d;
+    text-shadow: 0 0 20px #ffae35;
+}
+
+header p {
+    color: #a8b8ee;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-top: 6px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.stats div {
+    background: linear-gradient(145deg, #ffffff20, #ffffff08);
+    border: 1px solid #ffffff25;
+    border-radius: 15px;
+    padding: 12px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+
+.stats small,
+.next-box small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #aab8e8;
+}
+
+.stats strong {
+    display: block;
+    font-size: 25px;
+    color: #ffe36d;
+}
+
+.board {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    border: 2px solid #806aff;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #101d43;
+    box-shadow:
+        0 0 25px #7457ff66,
+        inset 0 0 35px #1c60aa33;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    touch-action: none;
+    cursor: crosshair;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: #090e27c9;
+    backdrop-filter: blur(7px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.start-card {
+    text-align: center;
+    animation: cardIn .6s ease;
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: scale(.7) translateY(25px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.big-icon {
+    font-size: 75px;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-13px) rotate(10deg); }
+}
+
+.start-card h2 {
+    font-size: 30px;
+    color: #ffe36d;
+    margin: 12px 0;
+}
+
+.start-card p {
+    color: #c0c9ec;
+    margin-bottom: 25px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-family: inherit;
+    font-weight: 700;
+    transition: .2s;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.04);
+    filter: brightness(1.15);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+#startBtn {
+    padding: 15px 35px;
+    border-radius: 30px;
+    background: linear-gradient(100deg, #ffb52f, #ff477b);
+    font-size: 16px;
+    box-shadow: 0 5px 25px #ff477b77;
+}
+
+.game-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    margin-top: 15px;
+}
+
+.game-controls button {
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #5542a6, #2773b9);
+    font-size: 12px;
+}
+
+.next-box {
+    text-align: center;
+    font-size: 10px;
+}
+
+#nextBubble {
+    width: 27px;
+    height: 27px;
+    margin: 7px auto 0;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 12px white;
+    background: #ff477b;
+}
+
+.progress-area {
+    margin-top: 20px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #aab8e8;
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    background: #ffffff1c;
+    height: 8px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #00e7ff, #b76aff, #ff4e91);
+    transition: width .3s;
+}
+
+.hint {
+    text-align: center;
+    margin-top: 16px;
+    color: #aebbe9;
+    font-size: 12px;
+}
+
+@media(max-width: 400px) {
+    body { padding: 10px; }
+    .logo { font-size: 25px; }
+    .game-controls button { padding: 10px 8px; font-size: 11px; }
+}
+
+.powerups {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.powerups button {
+    padding: 12px 4px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #6042c8, #a23fd0);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 0 0 12px #8d5aff55;
+}
+
+.powerups button:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.3);
+}
+.ad-container {
+    width: 100%;
+    max-width: 728px;
+    min-height: 90px;
+    margin: 15px auto;
+    text-align: center;
+    overflow: hidden;
+}
+/* Center Bubble Shooter Game */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    overflow-x: hidden;
+}
+
+.app {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: min(460px, 100%) !important;
+    max-width: 460px !important;
+    margin: 25px auto !important;
+    box-sizing: border-box;
+}
+/* Final center alignment fix */
+body {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    min-height: 100vh;
+    margin: 0 !important;
+}
+
+.app {
+    float: none !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 25px auto !important;
+    width: 460px !important;
+    max-width: calc(100% - 20px) !important;
+}
