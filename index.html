@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Shooter - Arcade Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9921027164083548"
+crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- TOP GOOGLE ADSENSE BANNER -->
+<div class="ad-container">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9921027164083548"
+         data-ad-slot="7222488580"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+</div>
+
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="app">
+    <header>
+        <div class="logo">🫧 Bubble Shooter</div>
+        <p>POP • MATCH • WIN</p>
+    </header>
+
+    <section class="stats">
+        <div><small>LEVEL</small><strong id="level">1</strong></div>
+        <div><small>SCORE</small><strong id="score">0</strong></div>
+        <div><small>BEST</small><strong id="best">0</strong></div>
+    </section>
+
+    <main class="board">
+        <canvas id="gameCanvas" width="440" height="600"></canvas>
+
+        <div class="overlay" id="overlay">
+            <div class="start-card">
+                <div class="big-icon">🫧</div>
+                <h2 id="message">Bubble Shooter</h2>
+                <p id="messageText">Ready for an amazing bubble adventure?</p>
+                <button id="startBtn">▶ PLAY NOW</button>
+            </div>
+        </div>
+    </main>
+    <!-- BOTTOM GOOGLE ADSENSE AD -->
+<div class="ad-container bottom-ad">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9921027164083548"
+         data-ad-slot="7222488580"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+</div>
+
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <section class="game-controls"> 
+        
+<div class="powerups">
+    <button onclick="activatePower('bomb')">💣 Bomb</button>
+    <button onclick="activatePower('fire')">🔥 Fire</button>
+    <button onclick="activatePower('rainbow')">🌈 Rainbow</button>
+    <button onclick="activatePower('laser')">⚡ Laser</button>
+</div>
+
+        <div class="next-box">
+            <small>NEXT BUBBLE</small>
+            <div id="nextBubble"></div>
+        </div>
+
+        <button id="restartBtn">↻ Restart</button>
+        <button id="soundBtn">🔊 Sound</button>
+        <button id="musicBtn">♫ Music</button>
+    </section>
+
+    <div class="progress-area">
+        <div class="progress-label">
+            <span>LEVEL PROGRESS</span>
+            <span id="progressText">0%</span>
+        </div>
+        <div class="progress-track">
+            <div id="progressFill"></div>
+        </div>
+    </div>
+
+    <p class="hint">🎯 Aim and tap anywhere on the board to shoot!</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
